@@ -137,6 +137,7 @@ var pattern_assembler = function () {
 
   // Render a pattern on request. Long-term, this should probably go away.
   function renderPattern(pattern, data, partials) {
+    
     // if we've been passed a full Pattern, it knows what kind of template it
     // is, and how to render itself, so we just call its render method
     if (pattern instanceof Pattern) {
@@ -357,7 +358,7 @@ var pattern_assembler = function () {
     parsePatternMarkdown(currentPattern, patternlab);
 
     //add the raw template to memory
-    currentPattern.template = fs.readFileSync(path.resolve(patternsPath, relPath), 'utf8');
+    //currentPattern.template = fs.readFileSync(path.resolve(patternsPath, relPath), 'utf8');
 
     //find any stylemodifiers that may be in the current pattern
     currentPattern.stylePartials = currentPattern.findPartialsWithStyleModifiers();
@@ -551,7 +552,7 @@ var pattern_assembler = function () {
       parseDataLinks(patternlab);
     },
     parse_data_links_specific: function (patternlab, data, label) {
-      return parseDataLinksHelper(patternlab, data, label);
+      return parseDataLinksHelper(patternlab, data, label)
     },
     parse_pattern_markdown: function (pattern, patternlab) {
       parsePatternMarkdown(pattern, patternlab);
