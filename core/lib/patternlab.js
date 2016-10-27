@@ -335,7 +335,7 @@ var patternlab_engine = function (config) {
       var headHTML = pattern_assembler.renderPattern(pattern.header, allData);
 
       //render the extendedTemplate with all data
-      console.log(pattern.patternName, pattern.patternGroup, pattern.patternSubGroup);
+      //console.log(pattern.patternName, pattern.patternGroup, pattern.patternSubGroup);
       pattern.patternPartialCode = pattern_assembler.renderPattern(pattern, allData);
 
       // stringify this data for individual pattern rendering and use on the styleguide
